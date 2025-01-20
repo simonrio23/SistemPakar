@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango Diseases | Sistem Diagnosis AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        .dark-gradient {
+            background: linear-gradient(to right, #2E7D32, #1B5E20);
+        }
+        .glass-dark {
+            background: rgba(46, 125, 50, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(129, 199, 132, 0.5);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        #mango-container {
+            display: flex;
+            width: 100%;
+            height: 400px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-green-900 text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-dark">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-3xl font-bold text-green-300 neon-glow">🥭 Mango Diseases</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-green-400 transition duration-300">Beranda</a>
+                    <a href="#features" class="text-gray-300 hover:text-green-400 transition duration-300">Fitur</a>
+                    <a href="#about" class="text-gray-300 hover:text-green-400 transition duration-300">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="dark-gradient pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-8">
+                        <span class="text-green-300 neon-glow">Diagnosa Mangga</span> 
+                        <br>dengan AI
+                    </h1>
+                    <p class="text-xl text-gray-200 mb-10">
+                        Teknologi kecerdasan buatan untuk mendiagnosa penyakit pada buah mangga Anda dengan akurasi tinggi
+                    </p>
+                    <div class="flex">
+                        <button class="bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                           <a href="/chatbot">Mulai Diagnosa</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div id="mango-container" class="bg-gradient-to-r from-green-900/20 to-green-600/20 backdrop-blur-lg border border-green-800">
+                            <img src="/static/foto.jpg" alt="Gambar" class="w-full h-auto">
+                        </div>
+                        
+                            <!-- Gambar mangga akan dimuat di sini -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-green-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-20">
+                <span class="text-green-300 neon-glow">Fitur</span> Unggulan
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="p-8 rounded-3xl bg-green-800/50 card-hover border border-green-700">
+                    <div class="w-16 h-16 bg-green-900/50 rounded-2xl flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 bg-green-900/50 rounded-2xl flex items-center justify-center mb-6">
+                            <img src="static/analisys.png" alt="Deskripsi gambar" class="w-12 h-12">
+                        </div>                        
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-300 mb-4">Analisis Cerdas</h3>
+                    <p class="text-gray-200">Teknologi NLP canggih yang memahami kondisi mangga Anda seperti pakar pertanian</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-green-800/50 card-hover border border-green-700">
+                    <div class="w-16 h-16 bg-green-900/50 rounded-2xl flex items-center justify-center mb-6">
+                        <img src="static/deteksi.png" alt="Deskripsi gambar" class="w-12 h-12">
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-300 mb-4">Deteksi Akurat</h3>
+                    <p class="text-gray-200">Akurasi 99.9% dalam mengidentifikasi penyakit mangga menggunakan algoritma AI</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-green-800/50 card-hover border border-green-700">
+                    <div class="w-16 h-16 bg-green-900/50 rounded-2xl flex items-center justify-center mb-6">
+                        <img src="static/mindset.png" alt="Deskripsi gambar" class="w-12 h-12">
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-300 mb-4">Solusi Cepat</h3>
+                    <p class="text-gray-200">Dapatkan diagnosis detail dan rekomendasi perawatan dalam hitungan detik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-green-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-20">
+                <span class="text-green-300 neon-glow">Tim</span> Pembuat
+            </h2>
+
+            <!-- Expert Section -->
+            
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Team -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-green-800/50 p-8 rounded-3xl card-hover border border-green-700">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-r from-green-600 to-green-400 p-1">
+                            <img src="/static/simon.jpeg" alt="Gambar" class="w-full h-full rounded-full border-4 border-green-700">
+                        </div>                        
+                        <div>
+                            <h4 class="text-2xl font-bold text-green-300 mb-2">Simon Rio Arwam</h4>
+                            <p class="text-gray-200 text-lg mb-2">Mahasiswa Muhammadya Sorong</p>
+                            <p class="text-gray-200">
+                                Mahasiswa yang melakukan penelitian tentang IMPLEMENTASI SISTEM PAKAR DENGAN METODE NATURAL LANGUAGE 
+PROCESSING UNTUK PENYAKIT PADA BUAH MANGGA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-green-800/50 p-8 rounded-3xl card-hover border border-green-700">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-r from-green-600 to-green-400 p-1">
+                            <img src="/static/elsha.jpeg" alt="Gambar" class="w-full h-full rounded-full border-4 border-green-700">
+                        </div>                        
+                        <div>
+                            <h4 class="text-2xl font-bold text-green-300 mb-2">Elsha Novelin Lempangan</h4>
+                            <p class="text-gray-200 text-lg mb-2">Mahasiswi Muhammadya Sorong</p>
+                            <p class="text-gray-200">
+                                Mahasiswi yang melakukan penelitian tentang IMPLEMENTASI SISTEM PAKAR DENGAN METODE NATURAL LANGUAGE 
+PROCESSING UNTUK PENYAKIT PADA BUAH MANGGA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="dark-gradient py-12 border-t border-green-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <span class="text-3xl font-bold text-green-300 neon-glow">🥭 ManggaDoc</span>
+                    <p class="mt-2 text-gray-200">Sistem Diagnosis Penyakit Mangga Modern</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-200 hover:text-green-400 transition">Kebijakan Privasi</a>
+                    <a href="#" class="text-gray-200 hover:text-green-400 transition">Syarat & Ketentuan</a>
+                </div>
+            </div>
+            <div class="border-t border-green-800 mt-8 pt-8 text-center">
+                <p class="text-gray-200">&copy; 2025 ManggaDoc AI. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/your-code-here.js" crossorigin="anonymous"></script>
+</body>
+</html>
